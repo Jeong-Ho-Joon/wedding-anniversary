@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ 저희 부모님의 N번째 결혼기념일을 축하합니다! ❤️</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+    <header class="header">
+        <h1>🎉 Happy Anniversary 🎉</h1>
+        <h2>사랑하는 <span id="mom-name">엄마</span> & <span id="dad-name">아빠</span>의 결혼 <span id="anniversary-year">30</span>주년</h2>
+        <p id="anniversary-date">YYYY년 MM월 DD일</p>
+    </header>
+
+    <main class="content-section">
+        <p class="message-intro">
+            가장 아름다운 사랑을 보여주신 두 분께, 진심으로 감사드립니다. <br>
+            두 분의 오늘이 세상에서 가장 행복한 날이 되기를 바랍니다.
+        </p>
+        
+        <div class="photo-gallery">
+            <img src="photo1.jpg" alt="부모님 옛날 사진" class="photo-item old-photo">
+            <img src="photo2.jpg" alt="부모님 최근 사진" class="photo-item current-photo">
+        </div>
+        
+        <p class="message-outro">
+            앞으로도 건강하고 행복하게, 오래오래 함께해 주세요.<br>
+            사랑합니다!
+        </p>
+    </main>
+
+    <footer class="footer">
+        <a href="**여기에 수동 송금 안내 페이지 링크**" id="gift-button" class="gift-button" target="_blank">
+            🎁 깜짝 용돈 선물 받기 (클릭!) 💰
+        </a>
+    </footer>
+
+    <script>
+        // *** 💡 사용자 설정 값 변경 영역 💡 ***
+        // 이름과 기념일 정보를 여기에 맞게 수정해주세요.
+        document.getElementById('mom-name').textContent = '사랑하는 엄마'; // 엄마 이름
+        document.getElementById('dad-name').textContent = '멋진 아빠'; // 아빠 이름
+        document.getElementById('anniversary-year').textContent = '30'; // 결혼 주년
+        document.getElementById('anniversary-date').textContent = '1995년 10월 28일'; // 결혼 기념일 날짜
+
+        // '깜짝 용돈 선물 받기' 버튼을 클릭했을 때의 동작을 여기에 설정합니다.
+        // 예시: 카카오톡 나에게 보내기 링크나, 토스/카카오페이 송금 요청 링크 등을 넣으세요.
+        document.getElementById('gift-button').href = 'https://open.kakao.com/o/sLINK'; // 예시 링크
+    </script>
+
+</body>
+</html>

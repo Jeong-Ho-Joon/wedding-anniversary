@@ -1,0 +1,103 @@
+/* 기본 스타일 초기화 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* 헤더 스타일 */
+.header {
+    background: linear-gradient(135deg, #ffc0cb, #ff69b4); /* 핑크 그라데이션 */
+    color: white;
+    padding: 30px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.header h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+#anniversary-date {
+    font-size: 1em;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* 메인 콘텐츠 스타일 */
+.content-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.message-intro, .message-outro {
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+/* 사진 갤러리 스타일 */
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.photo-item {
+    width: 45%; /* 두 개의 사진이 나란히 보이도록 설정 */
+    height: 250px;
+    object-fit: cover; /* 사진 비율 유지 */
+    border-radius: 10px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+/* 푸터 및 버튼 스타일 */
+.footer {
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.gift-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    background-color: #ff4500; /* 오렌지 레드 */
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.1s;
+    box-shadow: 0 5px #d33800; /* 3D 효과 */
+    border: none;
+    cursor: pointer;
+}
+
+.gift-button:hover {
+    background-color: #e63e00;
+}
+
+.gift-button:active {
+    box-shadow: 0 2px #d33800;
+    transform: translateY(3px);
+}
