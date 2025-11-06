@@ -1,47 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>30주년 결혼기념일 – 부모님께</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✨ 저희 부모님의 빛나는 30주년 결혼기념일 ✨</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>🎉 Happy 30th Anniversary!</h1>
-    <p>사랑하는 엄마 & 아빠께<br>30년의 사랑에 축하를 전합니다.</p>
-    <img class="hero-image" src="https://via.placeholder.com/1200x500?text=부모님+대표사진" alt="부모님 대표사진">
-  </header>
+    <div class="background-overlay"></div> 
+    
+    <header>
+        <div class="header-content">
+            <h1 class="glow-text">🎉 Happy <span id="anniversary-year-display">30th</span>  Anniversary of Wedding!</h1>
+            <p class="sub-text">사랑하는 <span id="mom-name">엄마</span> & <span id="dad-name">아빠</span>께</p>
+            <p class="date-text">1995년 11월 11일</p>
+            <img class="hero-image" src="photo-main.jpg" alt="부모님 대표사진">
+        </div>
+    </header>
 
-  <section class="timeline">
-    <div class="timeline-item">
-      <h2>1995 – 둘이의 시작</h2>
-      <img src="https://via.placeholder.com/800x450?text=결혼식+사진" alt="결혼식 사진">
-      <p>엄마와 아빠가 함께 새로운 삶을 시작했던 그날…</p>
-    </div>
+    <section class="timeline">
+        <h2 class="section-title">✨ 두 분의 빛나는 사랑 연대기 ✨</h2>
+        
+        <div class="timeline-item">
+            <h3 class="timeline-year">1995 – 사랑의 시작</h3>
+            <img src="photo1.jpg" alt="결혼식 사진">
+            <p>엄마와 아빠가 하나가 되어 아름다운 약속을 맺었던 감격적인 그 날. 모든 것이 새롭게 시작되었습니다.</p>
+        </div>
 
-    <div class="timeline-item">
-      <h2>2005 – 사랑이 깊어질 때</h2>
-      <img src="https://via.placeholder.com/800x450?text=가족+사진" alt="가족 사진">
-      <p>아이가 태어나고, 함께 가족이 되어 웃음으로 가득찼던 시절.</p>
-    </div>
+        <div class="timeline-item">
+            <h3 class="timeline-year">1996 – 장남의 탄생</h3>
+            <img src="photo2.jpg" alt="아이와 함께한 사진">
+            <p>든든한 첫 열매, 장남이 탄생하며 두 분의 삶은 비로소 '가족'으로 완성되었습니다.</p>
+        </div>
 
-    <div class="timeline-item">
-      <h2>2025 – 지금도 여전히</h2>
-      <img src="https://via.placeholder.com/800x450?text=최근+사진" alt="최근 사진">
-      <p>30년이 지나도 변함없는 사랑으로 함께 하시는 두 분께.</p>
-    </div>
-  </section>
+	<div class="timeline-item">
+            <h3 class="timeline-year">1999 – 말썽꾸러기 둘째 탄생</h3>
+            <img src="photo3.jpg" alt="아이와 함께한 사진">
+            <p>울타리가 두 배로 넓어진 해! 때론 말썽도 부렸지만, 두 분의 기쁨과 사랑은 배가 되었습니다.</p>
+        </div>
 
-  <section class="message">
-    <h2>사랑합니다</h2>
-    <p>저희에게 늘 큰 사랑과 모범이 되어주신 두 분께 진심으로 감사드립니다.<br>
-       앞으로의 날들도 건강하고 행복만 가득하시길 기원해요.</p>
-    <p>♥ 자녀 일동 드림 ♥</p>
-  </section>
+	<div class="timeline-item">
+            <h3 class="timeline-year">2004 – 정씨가문 첫번째 딸 탄생</h3>
+            <img src="photo4.jpg" alt="아이와 함께한 사진">
+            <p>딸이 가져온 화사함과 행복으로 두 분의 삶은 더욱 다채로운 빛깔을 갖게 되었습니다.</p>
+        </div>
 
-  <footer>
-    © 2025 사랑과 감사로 만든 페이지
-  </footer>
+	<div class="timeline-item">
+            <h3 class="timeline-year">2007 – 늦둥이 막내 탄생</h3>
+            <img src="photo5.jpg" alt="아이와 함께한 사진">
+            <p>가족의 사랑을 한 몸에 받는 늦둥이 막내가 찾아왔습니다.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3 class="timeline-year" id="current-year-display">2025 – 지금도 여전히</h3>
+            <img src="photo6.jpg" alt="최근 사진">
+            <p>30년의 세월을 함께하며 저희에게 큰 모범이 되어주신 두 분. 앞으로의 날들도 행복만 가득하시길 기원합니다.</p>
+        </div>
+    </section>
+
+    <section class="message">
+        <h2 class="message-title">사랑합니다, 그리고 감사합니다</h2>
+        <p class="message-body">저희가 세상에서 가장 자랑스러워하는 부모님!<br>
+        오래오래 건강하시고, 저희와 늘 함께해 주세요.</p>
+        <p class="signature">♥ 자녀 일동 드림 ♥</p>
+    </section>
+
+    <footer>
+        <a href="**여기에 수동 송금 안내 페이지 링크**" id="gift-button" class="gift-button" target="_blank">
+            🎁 30주년 축하 용돈 선물 받기 (클릭!) 💰
+        </a>
+        <p class="copyright">© 2025 사랑과 감사로 만든 페이지</p>
+    </footer>
+
+    <script>
+        // *** 💡 사용자 설정 값 변경 영역 💡 ***
+        // 이름과 기념일 정보를 여기에 맞게 수정해주세요.
+        const anniversaryYear = '30';
+        const momName = '엄마'; // 엄마 이름
+        const dadName = '멋진 아빠'; // 아빠 이름
+        const anniversaryDate = '1995년 10월 28일'; // 결혼 기념일 날짜
+
+        document.getElementById('anniversary-year-display').textContent = anniversaryYear;
+        document.getElementById('mom-name').textContent = momName;
+        document.getElementById('dad-name').textContent = dadName;
+        document.getElementById('anniversary-date-display').textContent = anniversaryDate;
+        document.getElementById('current-year-display').textContent = `${new Date().getFullYear()} – 지금도 여전히`;
+        
+        // '깜짝 용돈 선물 받기' 버튼을 클릭했을 때의 동작을 여기에 설정합니다.
+        // 예시: 토스/카카오페이 송금 요청 링크 또는 수동 송금 안내 페이지 링크
+        document.getElementById('gift-button').href = 'https://toss.me/your_account'; // 실제 링크로 교체하세요!
+    </script>
 </body>
 </html>
