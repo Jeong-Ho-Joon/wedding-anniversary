@@ -242,3 +242,70 @@ footer {
         width: auto; 
     }
 }
+
+/* ===== 30주년 기념 송금 애니메이션 스타일 ===== */
+
+.status-box {
+    padding: 30px 20px;
+    border: 3px solid #ffcc00;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #a08c3a;
+    transition: all 0.5s;
+}
+
+/* 1. 로딩 스피너 (돈이 돌아가는 느낌) */
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #ffd700; /* 골드 색상 */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1.5s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 2. 성공 시 스타일 */
+.status-box.success {
+    border-color: #38c172; /* 성공 시 녹색 계열 */
+    background-color: #e6ffed;
+    color: #1e7e34;
+    padding: 40px 20px;
+}
+
+/* 3. 축하 애니메이션 (폭죽/별) */
+.success-animation {
+    display: none;
+    margin-top: 20px;
+    font-size: 3em;
+    animation: pulse 1s infinite alternate;
+}
+
+.success-animation::before {
+    content: '⭐ 💰 🎉'; /* 축하 이모티콘 */
+    display: block;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+/* 버튼 hover/active 스타일 제거 (애니메이션 중복 방지 및 모바일 집중) */
+#gift-button:hover, #gift-button:active {
+    transform: none !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3) !important;
+}
+#gift-button:hover::before, #gift-button:active::before {
+    opacity: 0 !important;
+}
