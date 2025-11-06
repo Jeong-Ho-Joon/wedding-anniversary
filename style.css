@@ -1,92 +1,244 @@
-/* ===== 기본 설정 ===== */
+/* Google Fonts 임포트 */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Nanum+Myeongjo:wght@400;700&display=swap');
+
+/* ===== 기본 설정 (모바일 우선) ===== */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Pretendard', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  background-color: #fdfaf6;
-  line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Myeongjo', serif;
+    color: #333;
+    background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%); /* 골드 그라데이션 */
+    line-height: 1.7;
+    position: relative;
+    overflow-x: hidden;
+    font-size: 16px; 
+}
+
+/* 배경 오버레이 (은은한 반짝이 효과) */
+.background-overlay {
+    position: fixed; /* 배경 오버레이 고정 */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* 배경 패턴은 간결하게 제거하거나 매우 약하게 설정하여 가독성 확보 */
+    background-color: rgba(255, 255, 255, 0.2); 
+    z-index: -1;
 }
 
 /* ===== 헤더 ===== */
 header {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: #2d4a37;
-  color: #fff;
+    text-align: center;
+    padding: 40px 20px 0; /* 사진 위에 여백 */
+    background-color: #fff8e1; /* 밝은 크림색 배경 */
+    color: #4a3a00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 header h1 {
-  margin: 0;
-  font-size: 3em;
-  letter-spacing: 2px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em; 
+    margin: 0 0 5px;
+    letter-spacing: 1px;
 }
-header p {
-  font-size: 1.3em;
-  margin-top: 10px;
+
+.glow-text {
+    color: #a08c3a; /* 골드 느낌의 텍스트 */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
 }
+
+.sub-text {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 5px 0;
+    color: #6a5a00;
+}
+.date-text {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
 .hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: cover;
-  border-bottom: 5px solid #d4af37;
+    width: 90%; /* 모바일에서 꽉 차지 않게 여백 */
+    height: auto;
+    max-height: 300px; /* 모바일에서 적절한 높이 */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    border: 5px solid #d4af37; /* 골드 테두리 */
 }
 
 /* ===== 타임라인 ===== */
 section.timeline {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
+    padding: 40px 20px;
+    max-width: 90%;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    color: #a08c3a;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
 .timeline-item {
-  margin-bottom: 60px;
+    margin-bottom: 40px;
+    padding: 15px;
+    border-left: 3px solid #d4af37; /* 타임라인 라인 */
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
+
+.timeline-item::before {
+    content: '★'; /* 타임라인 포인트 */
+    position: absolute;
+    left: -18px;
+    top: 15px;
+    color: #ffcc00;
+    font-size: 1.2em;
+    background: #fff;
+    border-radius: 50%;
+    padding: 0 3px;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+.timeline-year {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: #7a6a00;
+    font-weight: 700;
+}
+
 .timeline-item img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
-.timeline-item h2 {
-  margin: 20px 0 10px;
-  font-size: 2em;
-  color: #2d4a37;
-  border-left: 5px solid #d4af37;
-  padding-left: 10px;
+
+.timeline-item p {
+    font-size: 1em;
+    color: #555;
 }
 
 /* ===== 메시지 섹션 ===== */
 .message {
-  text-align: center;
-  padding: 80px 20px;
-  background-color: #fff;
-  color: #2d4a37;
-}
-.message h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-}
-.message p {
-  font-size: 1.2em;
-  max-width: 700px;
-  margin: 10px auto;
+    text-align: center;
+    padding: 40px 20px;
+    background: #fff8e1;
+    color: #4a3a00;
+    border-radius: 10px;
+    max-width: 90%;
+    margin: 30px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-/* ===== 푸터 ===== */
+.message-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: #a08c3a;
+}
+.message-body {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 10px auto;
+    line-height: 1.8;
+}
+.signature {
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff69b4; /* 핑크색으로 사랑 강조 */
+}
+
+/* ===== 푸터 (용돈 버튼 포함) ===== */
 footer {
-  text-align: center;
-  padding: 30px 20px;
-  font-size: 0.9em;
-  color: #777;
-  background-color: #f8f6f4;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #f1e7a5;
+    margin-top: 30px;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== 반응형 ===== */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2.2em;
-  }
-  .timeline-item h2 {
-    font-size: 1.5em;
-  }
+/* 용돈 버튼 - 모바일 터치 최적화 */
+.gift-button {
+    display: block; 
+    width: 90%; 
+    max-width: 400px; 
+    margin: 0 auto 20px; /* 아래 여백 추가 */
+    
+    padding: 15px 10px; 
+    font-size: 1.2em; 
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ffd700, #ff8c00); 
+    text-decoration: none;
+    border-radius: 40px; 
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gift-button::before { /* 반짝이 애니메이션 */
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.gift-button:active { /* 터치 시 반짝임 */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+.gift-button:active::before {
+    opacity: 1;
+    top: -10%;
+    left: -10%;
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: #7a6a00;
+    margin-top: 10px;
+}
+
+/* 데스크톱 환경을 위한 미디어 쿼리 */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px; 
+    }
+    .hero-image {
+        max-height: 500px;
+    }
+    .timeline-item {
+        padding: 20px;
+        max-width: 600px; /* 타임라인 아이템 너비 제한 */
+        margin: 40px auto;
+    }
+    .gift-button {
+        width: auto; 
+    }
 }
