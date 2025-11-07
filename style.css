@@ -125,7 +125,7 @@ section.timeline {
 
 /* 타임라인 항목 내 개별 이미지 (1~2장 있는 경우) */
 .timeline-item img {
-    width: calc(50% - 5px);
+    width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: cover;
@@ -156,21 +156,21 @@ section.timeline {
 }
 
 /* 2-1. 가족의 추억 섹션 (여러 장의 사진) - Grid 배치로 수정 */
-.timeline-item:has(img:nth-of-type(3)) {
+/*.timeline-item:has(img:nth-of-type(3)) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 10px; /* 사진 사이 간격 */
     align-items: center;
     padding: 15px;
-}
+}*/
 
-.timeline-item:has(img:nth-of-type(3)) .timeline-year,
+*/.timeline-item:has(img:nth-of-type(3)) .timeline-year,
 .timeline-item:has(img:nth-of-type(3)) p {
     grid-column: 1 / -1; /* H3와 P는 전체 너비 */
-}
+}*/
 
-.timeline-item:has(img:nth-of-type(3)) img {
+/*.timeline-item:has(img:nth-of-type(3)) img {
     width: 100%;
     height: 120px;
     object-fit: cover;
@@ -179,7 +179,7 @@ section.timeline {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     opacity: 0; /* 애니메이션을 위해 초기 투명도 0 */
     transform: translateY(10px); /* 애니메이션을 위해 초기 위치 조정 */
-}
+}*/
 
 
 /* ===== 3. 메시지 섹션 (Message) ===== */
@@ -319,11 +319,112 @@ footer {
     }
     /* 타임라인 이미지 배치 (PC에서 두 장 나란히) */
     .timeline-item:has(img:nth-of-type(2)) img {
-        max-height: 250px;
+        max-width: 100%;
+        max-height: 100%;
     }
     /* 가족의 추억 섹션 (PC에서 3열 배치) */
-    .timeline-item:has(img:nth-of-type(3)) {
+    /*.timeline-item:has(img:nth-of-type(3)) {
         grid-template-columns: repeat(3, 1fr);
         gap: 15px;
+    }*/
+}
+
+/* ===== 2-1. [추가] 가족의 추억 섹션 전용 갤러리 스타일 (이미지 3개 이상) ===== */
+
+/* 해당 항목 내부 이미지를 담을 컨테이너 생성 */
+.timeline-item:has(img:nth-of-type(3)) {
+    /* 이 항목 자체는 Flexbox로 설정하여 제목과 텍스트 아래에 이미지 그룹이 오도록 함 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 전체 요소를 중앙 정렬 */
+}
+
+/* 이미지들을 담을 그룹 컨테이너 */
+.timeline-item:has(img:nth-of-type(3)) .image-group {
+    display: grid;
+    /* 모바일 기본 2열, 사진 6장이면 3줄에 걸쳐 배치 */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 8px; /* 사진 사이 간격 */
+    width: 100%; /* 부모 너비를 따라감 */
+    margin: 10px 0 15px;
+}
+
+/* 이미지 3개 이상 항목의 개별 이미지 스타일 재정의 */
+.timeline-item:has(img:nth-of-type(3)) img {
+    /* 애니메이션 속성 외의 나머지 속성을 덮어씀 */
+    width: 100%;
+    height: 120px; /* 갤러리처럼 보이도록 고정 높이 */
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 !important; /* 이미지 사이의 기존 마진 제거 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+
+/* PC 환경에서는 3열로 변경 */
+@media (min-width: 768px) {
+    .timeline-item:has(img:nth-of-type(3)) .image-group {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    .timeline-item:has(img:nth-of-type(3)) img {
+        height: 180px; 
+    }
+}
+
+/* ===== 3. 메시지 섹션 (Message) [독립 스타일 적용] ===== */
+.message {
+    text-align: center; /* ⭐ 중앙 정렬 적용 */
+    padding: 40px 20px;
+    background: #fff8e1; /* ⭐ 배경색 적용 */
+    color: #4a3a00;
+    border-radius: 10px;
+    max-width: 90%;
+    margin: 30px auto; /* ⭐ 중앙 배치 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.message-title {
+    font-family: 'Playfair Display', serif; /* ⭐ 폰트 적용 */
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #a08c3a;
+}
+.message-body {
+    font-size: 1.2em;
+    max-width: 700px;
+    margin: 10px auto;
+    line-height: 1.8;
+}
+.signature {
+    font-size: 1.3em;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff69b4;
+}
+
+/* 메시지 섹션 애니메이션 (필수) */
+.message.animated {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* PC 환경 미디어 쿼리 내 메시지 섹션 스타일 */
+@media (min-width: 768px) {
+    .message-title {
+        font-size: 2.8em;
+    }
+    .message-body {
+        font-size: 1.3em;
+    }
+    .signature {
+        font-size: 1.4em;
+    }
+    .message {
+        padding: 50px 30px; /* PC 환경에서 패딩 넓게 */
     }
 }
